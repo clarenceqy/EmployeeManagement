@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane fx:id="root" dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <items>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+         <items>
+            <StackPane prefHeight="600.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="CompanyTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="companyname" prefWidth="155.0" resizable="false" text="公司" />
+                      <TableColumn fx:id="workers" editable="false" prefWidth="44.0" resizable="false" sortable="false" text="名额" />
+                    </columns>
+                  </TableView>
+               </children>
+            </StackPane>
+            <HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="addcompany" mnemonicParsing="false" prefHeight="43.0" prefWidth="62.0" text="添加" />
+                  <Button fx:id="deletecompany" mnemonicParsing="false" prefHeight="44.0" prefWidth="71.0" text="删除" />
+                  <Button fx:id="insertcompany" mnemonicParsing="false" prefHeight="41.0" prefWidth="63.0" text="插入" />
+               </children>
+            </HBox>
+         </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+        <items>
+            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+               <items>
+                  <ScrollPane hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefViewportHeight="582.0" prefViewportWidth="1200.0" prefWidth="1200.0">
+                     <content>
+                        <TabPane tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab text="1-16日">
+                                 <content>
+                                    <TableView fx:id="EmployeeTable" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1200.0">
+                                       <columns>
+                                          <TableColumn fx:id="header1" prefWidth="68.0" text="时段/日期" />
+                                       </columns></TableView>
+                                 </content>
+                              </Tab>
+                              <Tab text="17-31日">
+                                 <content>
+                                    <TableView fx:id="EmployeeTable2" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="1200.0">
+                                       <columns>
+                                          <TableColumn fx:id="header2" prefWidth="68.0" text="时段/日期" />
+                                       </columns></TableView>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </content>
+                  </ScrollPane>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="1200.0">
+                     <children>
+                        <Button fx:id="addEmployeeButton" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" text="添加员工" />
+                        <Button fx:id="screenshot" layoutX="173.0" layoutY="7.0" mnemonicParsing="false" text="安排表截图" />
+                        <Button fx:id="saveButton" layoutX="265.0" layoutY="7.0" mnemonicParsing="false" text="保存安排表" />
+                        <Button fx:id="deleteButton" layoutX="93.0" layoutY="7.0" mnemonicParsing="false" text="删除员工" />
+                     </children></AnchorPane>
+               </items>
+            </SplitPane>
+            <ScrollPane fx:id="employeescp" fitToHeight="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="1200.0" vbarPolicy="NEVER">
+               <content>
+                  <ListView fx:id="employeelistview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="HORIZONTAL" prefHeight="50.0" prefWidth="1200.0" />
+               </content>
+            </ScrollPane>
+        </items>
+      </SplitPane>
+  </items>
+</SplitPane>
